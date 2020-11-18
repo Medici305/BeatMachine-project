@@ -48,6 +48,9 @@ body {
             }
             button {
                 font-size: 3rem;
+                &.active {
+                    
+                }
                 i {
                     pointer-events: none;
                 }
@@ -142,4 +145,8 @@ body {
     to {
         transform: scale(1.2);
     }
+}
+
+.fa-volume-mute {
+    color: #fff;
 }

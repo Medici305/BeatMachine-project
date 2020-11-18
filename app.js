@@ -7,6 +7,8 @@ class BeatMachine {
     this.snareAudio = document.querySelector(".snare-sound");
     this.hihatAudio = document.querySelector(".hihat-sound");
     this.selects = document.querySelectorAll("select");
+    this.muteBtn = document.querySelectorAll(".mute");
+    this.tempoSlider = document.querySelector('.tempo-slider');
     this.index = 0;
     this.bpm = 150;
     this.isPlaying = null;
@@ -77,6 +79,43 @@ class BeatMachine {
         break;
     }
   }
+
+  muteSound(e) {
+    const muteIndex = e.target.getAttribute("data-track");
+    const muteIcon = e.target.children[0];
+    if (muteIcon.classList.contains("fa-volume-up")) {
+      muteIcon.classList.remove("fa-volume-up");
+      muteIcon.classList.add("fa-microphone-slash");
+    } else {
+      muteIcon.classList.add("fa-volume-up");
+      muteIcon.classList.remove("fa-microphone-slash");
+    }
+    if (muteIcon.classList.contains("fa-microphone-slash")) {
+      switch (muteIndex) {
+        case "0":
+          this.kickAudio.volume = 0;
+          break;
+        case "1":
+          this.snareAudio.volume = 0;
+          break;
+        case "2":
+          this.hihatAudio.volume = 0;
+          break;
+      }
+    } else {
+      switch (muteIndex) {
+        case "0":
+          this.kickAudio.volume = 1;
+          break;
+        case "1":
+          this.snareAudio.volume = 1;
+          break;
+        case "2":
+          this.hihatAudio.volume = 1;
+          break;
+      }
+    }
+  }
 }
 
 // Instance
@@ -98,5 +137,11 @@ beatMachine.playBtn.addEventListener("click", function () {
 beatMachine.selects.forEach((select) => {
   select.addEventListener("change", function (e) {
     beatMachine.changeSound(e);
+  });
+});
+
+beatMachine.muteBtn.forEach((mute) => {
+  mute.addEventListener("click", function (e) {
+    beatMachine.muteSound(e);
   });
 });

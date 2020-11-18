@@ -145,5 +145,8 @@ body {
     transform: scale(1.2);
   }
 }
+.fa-volume-mute {
+  color: #fff;
+}
 
 /*# sourceMappingURL=main.css.map */
