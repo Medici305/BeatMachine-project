@@ -26,7 +26,7 @@ body {
 
 .contain {
     //@include border(3px, white);
-    margin-top: 3rem;
+    margin-top: 7rem;
     @include dimension(70vh, auto);
     .kick-track, .snare-track, .hihat-track {
         //@include border(3px, white);
@@ -129,7 +129,7 @@ body {
                 weight: 300;
             }
             span {
-                color: red;
+                color: hsl(0, 50%, 50%);
                 font-weight: 600;
             }
         }

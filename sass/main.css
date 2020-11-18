@@ -21,7 +21,7 @@ body {
 }
 
 .contain {
-  margin-top: 3rem;
+  margin-top: 7rem;
   height: 70vh;
   width: auto;
 }
@@ -133,7 +133,7 @@ body {
   font-weight: 300;
 }
 .contain .tempo p span {
-  color: red;
+  color: #bf4040;
   font-weight: 600;
 }
 

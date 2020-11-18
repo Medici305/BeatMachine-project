@@ -116,6 +116,23 @@ class BeatMachine {
       }
     }
   }
+
+  changeTempo(e) {
+      const selectBar = document.querySelector('.tempo-nr');
+      selectBar.innerText = e.target.value;
+      let color = `hsl(0, ${e.target.value}%, 50%)`
+      selectBar.style.color = color;
+  }
+
+  updateTempo(e) {
+      this.bpm = e.target.value;
+      clearInterval(this.isPlaying);
+      this.isPlaying = null;
+      const playButton = document.querySelector('.play');
+      if (playButton.classList.contains('active')) {
+          this.start();
+      }
+  }
 }
 
 // Instance
@@ -145,3 +162,11 @@ beatMachine.muteBtn.forEach((mute) => {
     beatMachine.muteSound(e);
   });
 });
+
+beatMachine.tempoSlider.addEventListener('input', function(e) {
+    beatMachine.changeTempo(e);
+})
+
+beatMachine.tempoSlider.addEventListener('change', function(e) {
+    beatMachine.updateTempo(e);
+})
