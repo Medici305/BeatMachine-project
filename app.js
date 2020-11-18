@@ -27,9 +27,24 @@ class BeatMachine {
 
     start() {
         const interval = (60/this.bpm) * 1000;
-        this.isPlaying = setInterval(() => {
-            this.repeat();
-        }, interval);
+        if (!this.isPlaying) {
+            this.isPlaying = setInterval(() => {
+                this.repeat();
+            }, interval);
+        } else {
+            clearInterval(this.isPlaying);
+            this.isPlaying = null;
+        }
+    }
+
+    updateBtn() {
+        if (!this.isPlaying) {
+            this.playBtn.innerText = 'Stop';
+            this.playBtn.classList.add('active');
+        } else {
+            this.playBtn.innerText = 'Play';
+            this.playBtn.classList.remove('active');
+        }
     }
 }
 
@@ -45,5 +60,6 @@ beatMachine.pads.forEach(pad => {
 })
 
 beatMachine.playBtn.addEventListener('click', function() {
+    beatMachine.updateBtn();
     beatMachine.start();
 })
