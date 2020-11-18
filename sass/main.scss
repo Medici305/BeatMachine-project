@@ -1,0 +1,145 @@
+@import 'components/mixin/mixins';
+@import 'components/placeholder/placeholder';
+@import 'components/variable/variables';
+@import '../node_modules/hover.css/css/hover.css';
+@import '../node_modules/materialize-css/dist/css/materialize.css';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+    font-family: Poppins;
+}
+
+html {
+    font-size: 9px;
+}
+
+body {
+    color: #fff;
+    background: black;
+}
+
+.title {
+    text-align: center;
+}
+
+.contain {
+    //@include border(3px, white);
+    margin-top: 3rem;
+    @include dimension(70vh, auto);
+    .kick-track, .snare-track, .hihat-track {
+        //@include border(3px, white);
+        @include flex(flex,row,space-between,center);
+        margin: 5rem 0;
+        .controls {
+            //@include border(3px, red);
+            @include flex(flex,row,space-around,center);
+            height: 10rem;
+            flex: 1;
+            h1, button, select {
+                margin: 0 5rem;
+            }
+            button, select {
+                appearance: none;
+                border: none;
+                background: none;
+                color: #fff;
+            }
+            button {
+                font-size: 3rem;
+                i {
+                    pointer-events: none;
+                }
+            }
+            select {
+                width: 15rem;
+                text-align: center;
+                display: block;
+                font-size: 1.5rem;
+                border-bottom: 1px solid #fff;
+                .fa {
+                    color: #fff;
+                    background: white;
+                }
+                option {
+                    color: black;
+                    background: gray;
+                    text-align: center;
+                }
+            }
+        }
+        .kick, .snare, .hihat {
+            //@include border(3px, green);
+            @include flex(flex, row, center, center);
+            margin-right: 5rem;
+            .pad {
+                @include dimension(10rem, 10rem);
+                margin: 0 1rem;
+                border-radius: 1rem;
+                cursor: pointer;
+            }
+            .kick-pad {
+                background: rgb(53, 53, 255);
+                &.active {
+                    background: navy;
+                }
+            }
+            .snare-pad {
+                background: rgb(255, 83, 112);
+                &.active {
+                    background: red;
+                }
+            }
+            .hihat-pad {
+                background: rgb(255, 255, 83);
+                &.active {
+                    background: orange;
+                }
+
+            }
+        }
+    }
+    .play-button {
+        //@include border(3px,white);
+        @include flex(flex,row,center,center);
+        button {
+                //@include border(1px, white);
+                @include dimension(5rem, 15rem);
+                border-radius: 1rem;
+                border: none;
+                font-size: 2rem;
+                cursor: pointer;
+        }
+    }
+
+    .tempo {
+        //@include border(3px, white);
+        @include flex(flex,column,center,center);
+        input {
+            @include dimension(5rem, 50rem);
+            border: none;
+        }
+        p {
+            font : {
+                size: 2rem;
+                weight: 300;
+            }
+            span {
+                color: red;
+                font-weight: 600;
+            }
+        }
+
+    }
+}
+
+
+@keyframes playTrack {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}

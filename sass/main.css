@@ -1,3 +1,149 @@
+@import '../node_modules/hover.css/css/hover.css';
+@import '../node_modules/materialize-css/dist/css/materialize.css';
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+  font-family: Poppins;
+}
 
+html {
+  font-size: 9px;
+}
+
+body {
+  color: #fff;
+  background: black;
+}
+
+.title {
+  text-align: center;
+}
+
+.contain {
+  margin-top: 3rem;
+  height: 70vh;
+  width: auto;
+}
+.contain .kick-track, .contain .snare-track, .contain .hihat-track {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5rem 0;
+}
+.contain .kick-track .controls, .contain .snare-track .controls, .contain .hihat-track .controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 10rem;
+  flex: 1;
+}
+.contain .kick-track .controls h1, .contain .kick-track .controls button, .contain .kick-track .controls select, .contain .snare-track .controls h1, .contain .snare-track .controls button, .contain .snare-track .controls select, .contain .hihat-track .controls h1, .contain .hihat-track .controls button, .contain .hihat-track .controls select {
+  margin: 0 5rem;
+}
+.contain .kick-track .controls button, .contain .kick-track .controls select, .contain .snare-track .controls button, .contain .snare-track .controls select, .contain .hihat-track .controls button, .contain .hihat-track .controls select {
+  appearance: none;
+  border: none;
+  background: none;
+  color: #fff;
+}
+.contain .kick-track .controls button, .contain .snare-track .controls button, .contain .hihat-track .controls button {
+  font-size: 3rem;
+}
+.contain .kick-track .controls button i, .contain .snare-track .controls button i, .contain .hihat-track .controls button i {
+  pointer-events: none;
+}
+.contain .kick-track .controls select, .contain .snare-track .controls select, .contain .hihat-track .controls select {
+  width: 15rem;
+  text-align: center;
+  display: block;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #fff;
+}
+.contain .kick-track .controls select .fa, .contain .snare-track .controls select .fa, .contain .hihat-track .controls select .fa {
+  color: #fff;
+  background: white;
+}
+.contain .kick-track .controls select option, .contain .snare-track .controls select option, .contain .hihat-track .controls select option {
+  color: black;
+  background: gray;
+  text-align: center;
+}
+.contain .kick-track .kick, .contain .kick-track .snare, .contain .kick-track .hihat, .contain .snare-track .kick, .contain .snare-track .snare, .contain .snare-track .hihat, .contain .hihat-track .kick, .contain .hihat-track .snare, .contain .hihat-track .hihat {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5rem;
+}
+.contain .kick-track .kick .pad, .contain .kick-track .snare .pad, .contain .kick-track .hihat .pad, .contain .snare-track .kick .pad, .contain .snare-track .snare .pad, .contain .snare-track .hihat .pad, .contain .hihat-track .kick .pad, .contain .hihat-track .snare .pad, .contain .hihat-track .hihat .pad {
+  height: 10rem;
+  width: 10rem;
+  margin: 0 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.contain .kick-track .kick .kick-pad, .contain .kick-track .snare .kick-pad, .contain .kick-track .hihat .kick-pad, .contain .snare-track .kick .kick-pad, .contain .snare-track .snare .kick-pad, .contain .snare-track .hihat .kick-pad, .contain .hihat-track .kick .kick-pad, .contain .hihat-track .snare .kick-pad, .contain .hihat-track .hihat .kick-pad {
+  background: #3535ff;
+}
+.contain .kick-track .kick .kick-pad.active, .contain .kick-track .snare .kick-pad.active, .contain .kick-track .hihat .kick-pad.active, .contain .snare-track .kick .kick-pad.active, .contain .snare-track .snare .kick-pad.active, .contain .snare-track .hihat .kick-pad.active, .contain .hihat-track .kick .kick-pad.active, .contain .hihat-track .snare .kick-pad.active, .contain .hihat-track .hihat .kick-pad.active {
+  background: navy;
+}
+.contain .kick-track .kick .snare-pad, .contain .kick-track .snare .snare-pad, .contain .kick-track .hihat .snare-pad, .contain .snare-track .kick .snare-pad, .contain .snare-track .snare .snare-pad, .contain .snare-track .hihat .snare-pad, .contain .hihat-track .kick .snare-pad, .contain .hihat-track .snare .snare-pad, .contain .hihat-track .hihat .snare-pad {
+  background: #ff5370;
+}
+.contain .kick-track .kick .snare-pad.active, .contain .kick-track .snare .snare-pad.active, .contain .kick-track .hihat .snare-pad.active, .contain .snare-track .kick .snare-pad.active, .contain .snare-track .snare .snare-pad.active, .contain .snare-track .hihat .snare-pad.active, .contain .hihat-track .kick .snare-pad.active, .contain .hihat-track .snare .snare-pad.active, .contain .hihat-track .hihat .snare-pad.active {
+  background: red;
+}
+.contain .kick-track .kick .hihat-pad, .contain .kick-track .snare .hihat-pad, .contain .kick-track .hihat .hihat-pad, .contain .snare-track .kick .hihat-pad, .contain .snare-track .snare .hihat-pad, .contain .snare-track .hihat .hihat-pad, .contain .hihat-track .kick .hihat-pad, .contain .hihat-track .snare .hihat-pad, .contain .hihat-track .hihat .hihat-pad {
+  background: #ffff53;
+}
+.contain .kick-track .kick .hihat-pad.active, .contain .kick-track .snare .hihat-pad.active, .contain .kick-track .hihat .hihat-pad.active, .contain .snare-track .kick .hihat-pad.active, .contain .snare-track .snare .hihat-pad.active, .contain .snare-track .hihat .hihat-pad.active, .contain .hihat-track .kick .hihat-pad.active, .contain .hihat-track .snare .hihat-pad.active, .contain .hihat-track .hihat .hihat-pad.active {
+  background: orange;
+}
+.contain .play-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.contain .play-button button {
+  height: 5rem;
+  width: 15rem;
+  border-radius: 1rem;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.contain .tempo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contain .tempo input {
+  height: 5rem;
+  width: 50rem;
+  border: none;
+}
+.contain .tempo p {
+  font-size: 2rem;
+  font-weight: 300;
+}
+.contain .tempo p span {
+  color: red;
+  font-weight: 600;
+}
+
+@keyframes playTrack {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
 
 /*# sourceMappingURL=main.css.map */
