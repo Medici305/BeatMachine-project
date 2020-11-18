@@ -1,0 +1,13 @@
+@import 'components/mixin/mixins';
+@import 'components/placeholder/placeholders';
+@import 'components/variable/variables';
+@import '../node_modules/hover.css/css/hover.css';
+@import '../node_modules/materialize-css/dist/css/materialize.css';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+    font-family: Poppins;
+}
+
