@@ -8,7 +8,7 @@ class BeatMachine {
     this.hihatAudio = document.querySelector(".hihat-sound");
     this.selects = document.querySelectorAll("select");
     this.muteBtn = document.querySelectorAll(".mute");
-    this.tempoSlider = document.querySelector('.tempo-slider');
+    this.tempoSlider = document.querySelector(".tempo-slider");
     this.index = 0;
     this.bpm = 150;
     this.isPlaying = null;
@@ -118,20 +118,20 @@ class BeatMachine {
   }
 
   changeTempo(e) {
-      const selectBar = document.querySelector('.tempo-nr');
-      selectBar.innerText = e.target.value;
-      let color = `hsl(0, ${e.target.value}%, 50%)`
-      selectBar.style.color = color;
+    const selectBar = document.querySelector(".tempo-nr");
+    selectBar.innerText = e.target.value;
+    let color = `hsl(0, ${e.target.value}%, 50%)`;
+    selectBar.style.color = color;
   }
 
   updateTempo(e) {
-      this.bpm = e.target.value;
-      clearInterval(this.isPlaying);
-      this.isPlaying = null;
-      const playButton = document.querySelector('.play');
-      if (playButton.classList.contains('active')) {
-          this.start();
-      }
+    this.bpm = e.target.value;
+    clearInterval(this.isPlaying);
+    this.isPlaying = null;
+    const playButton = document.querySelector(".play");
+    if (playButton.classList.contains("active")) {
+      this.start();
+    }
   }
 }
 
@@ -163,10 +163,10 @@ beatMachine.muteBtn.forEach((mute) => {
   });
 });
 
-beatMachine.tempoSlider.addEventListener('input', function(e) {
-    beatMachine.changeTempo(e);
-})
+beatMachine.tempoSlider.addEventListener("input", function (e) {
+  beatMachine.changeTempo(e);
+});
 
-beatMachine.tempoSlider.addEventListener('change', function(e) {
-    beatMachine.updateTempo(e);
-})
+beatMachine.tempoSlider.addEventListener("change", function (e) {
+  beatMachine.updateTempo(e);
+});
